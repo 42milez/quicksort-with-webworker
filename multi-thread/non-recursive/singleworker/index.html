@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Concurrent Quick Sort</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    (function () {
+        function ConcurrentQuickSort(ary, l_idx, r_idx) {
+            var w = new Worker("../../../lib/quicksort/worker/non-recursive/worker.js");
+            var result = new Array(ary.length);
+
+            // message handler
+            w.onmessage = function (event) {
+                console.log("------------------------------");
+                console.timeEnd("Time");
+                var ary = event.data;
+                for (var i = 0, len = ary.length; i < len; i++) {
+                    result[i] = ary[i];
+                }
+                console.log("sorted array: " + result);
+                console.log("len: " + result.length);
+            };
+
+            // start sorting
+            this.exec = function () {
+                console.time("Time");
+                if (r_idx > l_idx) {
+                    w.postMessage(ary);
+                }
+            };
+        }
+
+        // ------------------------------
+        //  TEST
+        // ------------------------------
+        var n = 10;
+        var ary = new Array(n);                                      console.log("n: " + n);
+        for (var i = 0; i < n; i++) {
+            ary[i] = Math.floor(Math.random() * 100);
+        }                                                            console.log("original array: " + ary); console.log("len: " + ary.length);
+        var cqs = new ConcurrentQuickSort(ary, 0, ary.length - 1);
+        cqs.exec();
+    })();
+
+</script>
+</body>
+</html>
