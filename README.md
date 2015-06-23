@@ -4,6 +4,11 @@ There are the two parts in this project. One of them evaluates the performance o
 Another one evaluates only non-recursive quick sort performance.
 Some of the non-recursive quick sort benchmarking are evaluated with one or two worker threads.
 
+# How to run the benchmark
+You can run some specs to open a SpecRunner.html in your browser.
+For example, if you run a multi-thread non-recursive quick sort spec, open a HTML file as below:
+> test/spec/multi-thread/non-recursive/doubleworker/SpecRunner.html
+
 # Copyright and license
 The MIT License
 
