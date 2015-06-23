@@ -1,7 +1,15 @@
 describe("NonRecursiveQuickSort", function () {
     it("should sort an array in ascending order", function () {
-        var n = 10;
-        var ary = new Array(n);
+        var conf = {n: 10, randMax: 100, verbose: false};
+        var queryStrings = location.search.substring(1).split("&");
+        for (var i = 0, len = queryStrings.length; i < len; i++) {
+            if (queryStrings[i] !== "") {
+                var query = queryStrings[i].split("=");
+                if (query[0] === "n") conf.n = parseInt(query[1]);
+                if (query[0] === "randmax") conf.randMax = parseInt(query[1]);
+            }
+        }
+        var ary = new Array(conf.n);
         var result = new Array(ary.length);
         var w = new Worker(window.location.origin + "/quicksort/src/worker/non-recursive/typedarray/worker.js");
 
@@ -13,18 +21,18 @@ describe("NonRecursiveQuickSort", function () {
             for (var i = 0, len = ary.length; i < len; i++) {
                 result[i] = ary[i];
             }
-            console.log("sorted array: " + result);
-            console.log("len: " + result.length);
+            if (conf.verbose) console.log("sorted array: " + result);
+            if (conf.verbose) console.log("len: " + result.length);
         };
 
         // generate the values
-        for (var i = 0; i < n; i++) {
-            ary[i] = Math.floor(Math.random() * 100);
+        for (var i = 0, count = conf.n; i < count; i++) {
+            ary[i] = Math.floor(Math.random() * conf.randMax);
         }
 
-        console.log("n: " + n);
-        console.log("original array: " + ary);
-        console.log("len: " + ary.length);
+        console.log("n: " + conf.n);
+        if (conf.verbose) console.log("original array: " + ary);
+        if (conf.verbose) console.log("len: " + ary.length);
 
         // ------------------------------
         //  start sorting
