@@ -5,7 +5,7 @@
     <title>Quick Sort</title>
 </head>
 <body>
-<script type="text/javascript" src="../../lib/quicksort/recursive.js"></script>
+<script type="text/javascript" src="../../../lib/quicksort/recursive.js"></script>
 <script type="text/javascript">
 
     // ------------------------------
@@ -16,10 +16,8 @@
         var ary = new Array(n);                              console.log("n: " + n);
         for (var i = 0; i < n; i++) {
             ary[i] = Math.floor(Math.random() * 100);
-        }                                                    console.log("original array: " + ary); console.log("len: " + ary.length);
-                                                             console.time("Time");
-        RecursiveQuickSort.sort(ary, 0, ary.length - 1);     console.log("------------------------------"); console.timeEnd("Time");
-                                                             console.log("sorted array: " + ary); console.log("len: " + ary.length);
+        }                                                    console.log("original array: " + ary); console.log("len: " + ary.length); console.time("Time");
+        RecursiveQuickSort.sort(ary, 0, ary.length - 1);     console.log("------------------------------"); console.timeEnd("Time"); console.log("sorted array: " + ary); console.log("len: " + ary.length);
     })();
 
 </script>
