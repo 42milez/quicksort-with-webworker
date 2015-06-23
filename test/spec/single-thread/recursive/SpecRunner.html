@@ -2,24 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Quick Sort</title>
+    <title>Test</title>
+    <link rel="shortcut icon" type="image/png" href="../../../../lib/jasmine/jasmine_favicon.png">
+    <link rel="stylesheet" type="text/css" href="../../../../lib/jasmine/jasmine.css">
 </head>
 <body>
-<script type="text/javascript" src="../../../lib/quicksort/recursive.js"></script>
-<script type="text/javascript">
-
-    // ------------------------------
-    //  TEST
-    // ------------------------------
-    (function () {
-        var n = 10;
-        var ary = new Array(n);                              console.log("n: " + n);
-        for (var i = 0; i < n; i++) {
-            ary[i] = Math.floor(Math.random() * 100);
-        }                                                    console.log("original array: " + ary); console.log("len: " + ary.length); console.time("Time");
-        RecursiveQuickSort.sort(ary, 0, ary.length - 1);     console.log("------------------------------"); console.timeEnd("Time"); console.log("sorted array: " + ary); console.log("len: " + ary.length);
-    })();
-
-</script>
+<script type="text/javascript" src="../../../../lib/jasmine/jasmine.js"></script>
+<script type="text/javascript" src="../../../../lib/jasmine/jasmine-html.js"></script>
+<script type="text/javascript" src="../../../../lib/jasmine/boot.js"></script>
+<script type="text/javascript" src="../../../../src/recursive.js"></script>
+<script type="text/javascript" src="spec.js"></script>
 </body>
 </html>
