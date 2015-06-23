@@ -7,7 +7,10 @@ Some of the non-recursive quick sort benchmarking are evaluated with one or two 
 # How to run the benchmark
 You can run some specs to open a SpecRunner.html in your browser.
 For example, if you run a multi-thread non-recursive quick sort spec, open a HTML file as below:
+
 > test/spec/multi-thread/non-recursive/doubleworker/SpecRunner.html
+
+And you can see the result of benchmarking in the console on a browser.
 
 # Copyright and license
 The MIT License
