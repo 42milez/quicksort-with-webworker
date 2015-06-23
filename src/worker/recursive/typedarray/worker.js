@@ -2,10 +2,10 @@ importScripts("../../../recursive.js");
 onmessage = function (event) {
     var ary = event.data;
 
-    // ソートを実行
+    // start sorting
     if (ary.length > 0)
         RecursiveQuickSort.sort(ary);
 
-    // ソート済み配列をメインスレッドへ転送
+    // send the sorted array to main thread
     postMessage(ary, [ary.buffer]);
 };
