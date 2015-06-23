@@ -11,7 +11,7 @@
         var n = 10;
         var ary = new Array(n);
         var result = new Array(ary.length);
-        var w = new Worker("../../../lib/quicksort/worker/non-recursive/worker.js");
+        var w = new Worker("../../../../lib/quicksort/worker/non-recursive/worker.js");
 
         // message handler
         w.onmessage = function (event) {
