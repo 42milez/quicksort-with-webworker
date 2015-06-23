@@ -11,7 +11,7 @@
         var n = 10;
         var ary = new Array(n);
         var result = new Array(ary.length);
-        var w = new Worker("../../../../lib/quicksort/worker/non-recursive/typedarray/worker.js");
+        var w = new Worker("../../../../../lib/quicksort/worker/non-recursive/typedarray/worker.js");
 
         for (var i = 0; i < n; i++) {
             ary[i] = Math.floor(Math.random() * 100);
