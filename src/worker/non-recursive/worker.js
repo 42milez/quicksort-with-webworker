@@ -2,10 +2,10 @@ importScripts("../../non-recursive.js");
 onmessage = function (event) {
     var ary = event.data;
 
-    // ソートを実行
+    // start sorting
     if (ary.length > 0)
         NonRecursiveQuickSort.sort(ary);
 
-    // ソート済み配列をメインスレッドへ転送
+    // send the sorted array to main thread
     postMessage(ary);
 };
