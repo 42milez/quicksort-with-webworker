@@ -8,43 +8,38 @@
 <script type="text/javascript">
 
     (function () {
-        function ConcurrentQuickSort(ary, l_idx, r_idx) {
-            var w = new Worker("../../../../lib/quicksort/worker/non-recursive/typedarray/worker.js");
-            var result = new Array(ary.length);
-
-            // message handler
-            w.onmessage = function (event) {
-                console.log("------------------------------");
-                console.timeEnd("Time");
-                var ary = event.data;
-                for (var i = 0, len = ary.length; i < len; i++) {
-                    result[i] = ary[i];
-                }
-                console.log("sorted array: " + result);
-                console.log("len: " + result.length);
-            };
-
-            // start sorting
-            this.exec = function () {
-                console.log("------------------------------");
-                console.time("Time");
-                if (r_idx > l_idx) {                      console.time("create a typed array");
-                    var data = new Int32Array(ary);       console.timeEnd("create a typed array");
-                    w.postMessage(data, [data.buffer]);
-                }
-            };
-        }
-
-        // ------------------------------
-        //  TEST
-        // ------------------------------
         var n = 10;
-        var ary = new Array(n);                                      console.log("n: " + n);
+        var ary = new Array(n);
+        var result = new Array(ary.length);
+        var w = new Worker("../../../../lib/quicksort/worker/non-recursive/typedarray/worker.js");
+
         for (var i = 0; i < n; i++) {
             ary[i] = Math.floor(Math.random() * 100);
-        }                                                            console.log("original array: " + ary); console.log("len: " + ary.length);
-        var cqs = new ConcurrentQuickSort(ary, 0, ary.length - 1);
-        cqs.exec();
+        }
+
+        // message handler
+        w.onmessage = function (event) {
+            console.log("------------------------------");
+            console.timeEnd("Time");
+            var ary = event.data;
+            for (var i = 0, len = ary.length; i < len; i++) {
+                result[i] = ary[i];
+            }
+            console.log("sorted array: " + result);
+            console.log("len: " + result.length);
+        };
+
+        console.log("n: " + n);
+        console.log("original array: " + ary);
+        console.log("len: " + ary.length);
+
+        // start sorting
+        console.log("------------------------------");
+        console.time("Time");
+        console.time("create a typed array");
+        var data = new Int32Array(ary);
+        console.timeEnd("create a typed array");
+        w.postMessage(data, [data.buffer]);
     })();
 
 </script>
