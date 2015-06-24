@@ -19,9 +19,7 @@ describe("NonRecursiveQuickSort", function () {
         // message handler
         w1.onmessage = w2.onmessage = function (event) {
 
-            /* CONSOLE */ {
-                console.log("------------------------------");
-            }
+            /* CONSOLE */ { console.log("------------------------------"); }
 
             numWorker--;
             var ary = event.data;
@@ -30,31 +28,23 @@ describe("NonRecursiveQuickSort", function () {
             if (ary.length > 0) {
                 if (result[firstPivotIdx] <= ary[0]) {
 
-                    /* CONSOLE */ {
-                        console.time("merge arrays");
-                    }
+                    /* CONSOLE */ { console.time("merge arrays"); }
 
                     for (var i = firstPivotIdx + 1, j = 0, len = ary.length; j < len; i++, j++) {
                         result[i] = ary[j];
                     }
 
-                    /* CONSOLE */ {
-                        console.timeEnd("merge arrays");
-                    }
+                    /* CONSOLE */ { console.timeEnd("merge arrays"); }
                 }
                 else {
 
-                    /* CONSOLE */ {
-                        console.time("merge arrays");
-                    }
+                    /* CONSOLE */ { console.time("merge arrays"); }
 
                     for (var i = 0, len = ary.length; i < len; i++) {
                         result[i] = ary[i];
                     }
 
-                    /* CONSOLE */ {
-                        console.timeEnd("merge arrays");
-                    }
+                    /* CONSOLE */ { console.timeEnd("merge arrays"); }
                 }
             }
 
@@ -115,9 +105,7 @@ describe("NonRecursiveQuickSort", function () {
         firstPivotIdx = partition(ary, 0, ary.length - 1);
         result[firstPivotIdx] = ary[firstPivotIdx];
 
-        /* CONSOLE */ {
-            console.time("create a sliced array");
-        }
+        /* CONSOLE */ { console.time("create a sliced array"); }
 
         var a1 = ary.slice(0, firstPivotIdx);
 
@@ -142,9 +130,7 @@ describe("NonRecursiveQuickSort", function () {
 
         var data2 = new Int32Array(a2);
 
-        /* CONSOLE */ {
-            console.timeEnd("create a typed array from sliced array");
-        }
+        /* CONSOLE */ { console.timeEnd("create a typed array from sliced array"); }
 
         w1.postMessage(data1, [data1.buffer]);
         w2.postMessage(data2, [data2.buffer]);
