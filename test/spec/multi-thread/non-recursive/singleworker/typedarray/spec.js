@@ -15,14 +15,21 @@ describe("NonRecursiveQuickSort", function () {
 
         // message handler
         w.onmessage = function (event) {
-            console.log("------------------------------");
-            console.timeEnd("Time");
+
+            /* CONSOLE */ {
+                console.log("------------------------------");
+                console.timeEnd("Time");
+            }
+
             var ary = event.data;
             for (var i = 0, len = ary.length; i < len; i++) {
                 result[i] = ary[i];
             }
-            if (conf.verbose) console.log("sorted array: " + result);
-            if (conf.verbose) console.log("len: " + result.length);
+
+            /* CONSOLE */ {
+                if (conf.verbose) console.log("sorted array: " + result);
+                if (conf.verbose) console.log("len: " + result.length);
+            }
         };
 
         // generate the values
@@ -30,22 +37,28 @@ describe("NonRecursiveQuickSort", function () {
             ary[i] = Math.floor(Math.random() * conf.randMax);
         }
 
-        console.log("n: " + conf.n);
-        if (conf.verbose) console.log("original array: " + ary);
-        if (conf.verbose) console.log("len: " + ary.length);
+        /* CONSOLE */ {
+            console.log("n: " + conf.n);
+            if (conf.verbose) console.log("original array: " + ary);
+            if (conf.verbose) console.log("len: " + ary.length);
+        }
 
         // ------------------------------
         //  start sorting
         // ------------------------------
-        {
+
+        /* CONSOLE */ {
             console.log("------------------------------");
             console.time("Time");
             console.time("create a typed array");
         }
+
         var data = new Int32Array(ary);
-        {
+
+        /* CONSOLE */ {
             console.timeEnd("create a typed array");
         }
+
         w.postMessage(data, [data.buffer]);
 
         // ------------------------------
