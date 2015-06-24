@@ -20,17 +20,22 @@ describe("RecursiveQuickSort", function () {
         // ------------------------------
         //  start sorting
         // ------------------------------
-        console.log("n: " + conf.n);
-        if (conf.verbose) console.log("original array: " + ary);
-        if (conf.verbose) console.log("len: " + ary.length);
-        console.time("Time");
+
+        /* CONSOLE */ {
+            console.log("n: " + conf.n);
+            if (conf.verbose) console.log("original array: " + ary);
+            if (conf.verbose) console.log("len: " + ary.length);
+            console.time("Time");
+        }
 
         RecursiveQuickSort.sort(ary, 0, ary.length - 1);
 
-        console.log("------------------------------");
-        console.timeEnd("Time");
-        if (conf.verbose) console.log("sorted array: " + ary);
-        if (conf.verbose) console.log("len: " + ary.length);
+        /* CONSOLE */ {
+            console.log("------------------------------");
+            console.timeEnd("Time");
+            if (conf.verbose) console.log("sorted array: " + ary);
+            if (conf.verbose) console.log("len: " + ary.length);
+        }
 
         // ------------------------------
         //  check the result
