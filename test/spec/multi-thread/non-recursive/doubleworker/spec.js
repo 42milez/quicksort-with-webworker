@@ -18,34 +18,55 @@ describe("NonRecursiveQuickSort", function () {
 
         // message handler
         w1.onmessage = w2.onmessage = function (event) {
-            console.log("------------------------------");
+
+            /* CONSOLE */ {
+                console.log("------------------------------");
+            }
+
             numWorker--;
             var ary = event.data;
 
             // merge the array
             if (ary.length > 0) {
                 if (result[firstPivotIdx] <= ary[0]) {
-                    console.time("merge arrays");
+
+                    /* CONSOLE */ {
+                        console.time("merge arrays");
+                    }
+
                     for (var i = firstPivotIdx + 1, j = 0, len = ary.length; j < len; i++, j++) {
                         result[i] = ary[j];
                     }
-                    console.timeEnd("merge arrays");
+
+                    /* CONSOLE */ {
+                        console.timeEnd("merge arrays");
+                    }
                 }
                 else {
-                    console.time("merge arrays");
+
+                    /* CONSOLE */ {
+                        console.time("merge arrays");
+                    }
+
                     for (var i = 0, len = ary.length; i < len; i++) {
                         result[i] = ary[i];
                     }
-                    console.timeEnd("merge arrays");
+
+                    /* CONSOLE */ {
+                        console.timeEnd("merge arrays");
+                    }
                 }
             }
 
             // すべての Worker からデータを受け取り次第、併合処理を終了
             if (numWorker <= 0) {
-                console.log("------------------------------");
-                console.timeEnd("Time");
-                if (conf.verbose) console.log("sorted array: " + result);
-                if (conf.verbose) console.log("len: " + result.length);
+
+                /* CONSOLE */ {
+                    console.log("------------------------------");
+                    console.timeEnd("Time");
+                    if (conf.verbose) console.log("sorted array: " + result);
+                    if (conf.verbose) console.log("len: " + result.length);
+                }
             }
         };
 
@@ -54,9 +75,11 @@ describe("NonRecursiveQuickSort", function () {
             ary[i] = Math.floor(Math.random() * conf.randMax);
         }
 
-        console.log("n: " + conf.n);
-        if (conf.verbose) console.log("original array: " + ary);
-        if (conf.verbose) console.log("len: " + ary.length);
+        /* CONSOLE */ {
+            console.log("n: " + conf.n);
+            if (conf.verbose) console.log("original array: " + ary);
+            if (conf.verbose) console.log("len: " + ary.length);
+        }
 
         // divide an array
         function partition(ary, lIdx, rIdx) {
@@ -84,24 +107,32 @@ describe("NonRecursiveQuickSort", function () {
         // ------------------------------
         //  start sorting
         // ------------------------------
-        {
+
+        /* CONSOLE */ {
             console.log("------------------------------");
             console.time("Time");
         }
+
         firstPivotIdx = partition(ary, 0, ary.length - 1);
         result[firstPivotIdx] = ary[firstPivotIdx];
-        {
+
+        /* CONSOLE */ {
             console.time("create a sliced array");
         }
+
         var data1 = ary.slice(0, firstPivotIdx);
-        {
+
+        /* CONSOLE */ {
             console.timeEnd("create a sliced array");
             console.time("create a sliced array");
         }
+
         var data2 = ary.slice(firstPivotIdx + 1, ary.length);
-        {
+
+        /* CONSOLE */ {
             console.timeEnd("create a sliced array");
         }
+
         w1.postMessage(data1);
         w2.postMessage(data2);
 
