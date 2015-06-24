@@ -47,9 +47,7 @@ describe("NonRecursiveQuickSort", function () {
         //  start sorting
         // ------------------------------
 
-        /* CONSOLE */ {
-            console.time("Time");
-        }
+        /* CONSOLE */ { console.time("Time"); }
 
         w.postMessage(ary);
 
