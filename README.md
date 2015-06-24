@@ -1,12 +1,12 @@
 # Overview
-I started this project for benchmarking the performance of quick sort with JavaScript.
+I started this project for benchmarking the performance of quick sort with Web Worker.
 There are the two parts in this project. One of them evaluates the performance of recursive quick sort.
 Another one evaluates only non-recursive quick sort performance.
 Some of the non-recursive quick sort benchmarking are evaluated with one or two worker threads.
 
 # How to run the benchmark
 You can run some specs to open a SpecRunner.html in your browser.
-For example, if you run a multi-thread non-recursive quick sort spec, open a HTML file as below:
+For example, if you run a multi-thread non-recursive quick sort spec, open a HTML file below:
 
 > test/spec/multi-thread/non-recursive/doubleworker/SpecRunner.html
 
