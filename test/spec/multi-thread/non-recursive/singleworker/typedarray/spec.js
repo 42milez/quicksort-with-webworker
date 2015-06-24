@@ -55,9 +55,7 @@ describe("NonRecursiveQuickSort", function () {
 
         var data = new Int32Array(ary);
 
-        /* CONSOLE */ {
-            console.timeEnd("create a typed array");
-        }
+        /* CONSOLE */ { console.timeEnd("create a typed array"); }
 
         w.postMessage(data, [data.buffer]);
 
