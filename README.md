@@ -12,6 +12,26 @@ For example, if you run a multi-thread non-recursive quick sort spec, open a HTM
 
 And you can see the result of benchmarking in the console on a browser.
 
+# Specs
+
+#### Recursive Quick Sort
+test/spec/single-thread/recursive
+
+#### Non-Recursive Quick Sort
+test/spec/single-thread/non-recursive
+
+#### Non-Recursive Quick Sort with a worker thread
+test/spec/multi-thread/singleworker
+
+#### Non-Recursive Quick Sort with Typed Array and a worker thread
+test/spec/multi-thread/singleworker/typedarray
+
+#### Non-Recursive Quick Sort with 2 worker threads
+test/spec/multi-thread/doubleworker
+
+#### Non-Recursive Quick Sort with Typed Array and 2 worker threads
+test/spec/multi-thread/doubleworker/typedarray
+
 # Copyright and license
 The MIT License
 
