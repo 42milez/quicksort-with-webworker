@@ -20,16 +20,16 @@ test/spec/single-thread/recursive
 #### 2. Non-Recursive Quick Sort
 test/spec/single-thread/non-recursive
 
-#### 3. Non-Recursive Quick Sort with a worker thread
+#### 3. Non-Recursive Quick Sort with a WebWorker thread
 test/spec/multi-thread/singleworker
 
-#### 4. Non-Recursive Quick Sort with Typed Array and a worker thread
+#### 4. Non-Recursive Quick Sort with Typed Array and a WebWorker thread
 test/spec/multi-thread/singleworker/typedarray
 
-#### 5. Non-Recursive Quick Sort with 2 worker threads
+#### 5. Non-Recursive Quick Sort with 2 WebWorker threads
 test/spec/multi-thread/doubleworker
 
-#### 6. Non-Recursive Quick Sort with Typed Array and 2 worker threads
+#### 6. Non-Recursive Quick Sort with Typed Array and 2 WebWorker threads
 test/spec/multi-thread/doubleworker/typedarray
 
 # Copyright and license
