@@ -32,6 +32,16 @@ test/spec/multi-thread/doubleworker
 #### 6. Non-Recursive Quick Sort with Typed Array and 2 WebWorker threads
 test/spec/multi-thread/doubleworker/typedarray
 
+# Spec options
+
+You can set some test options in a test by passing query parameters to a SpecRunner like below:
+
+> test/spec/multi-thread/singleworker?n=10000&randmax=100&verbose=true
+
+> n:       The number of the elements for an array which will be sorted.
+> randmax: The max value of an element.
+> verbose: Show some additional debug messages in a browser's console.
+
 # Copyright and license
 The MIT License
 
