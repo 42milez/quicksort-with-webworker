@@ -14,22 +14,22 @@ And you can see the result of benchmarking in the console on a browser.
 
 # Specs
 
-#### Recursive Quick Sort
+#### 1. Recursive Quick Sort
 test/spec/single-thread/recursive
 
-#### Non-Recursive Quick Sort
+#### 2. Non-Recursive Quick Sort
 test/spec/single-thread/non-recursive
 
-#### Non-Recursive Quick Sort with a worker thread
+#### 3. Non-Recursive Quick Sort with a worker thread
 test/spec/multi-thread/singleworker
 
-#### Non-Recursive Quick Sort with Typed Array and a worker thread
+#### 4. Non-Recursive Quick Sort with Typed Array and a worker thread
 test/spec/multi-thread/singleworker/typedarray
 
-#### Non-Recursive Quick Sort with 2 worker threads
+#### 5. Non-Recursive Quick Sort with 2 worker threads
 test/spec/multi-thread/doubleworker
 
-#### Non-Recursive Quick Sort with Typed Array and 2 worker threads
+#### 6. Non-Recursive Quick Sort with Typed Array and 2 worker threads
 test/spec/multi-thread/doubleworker/typedarray
 
 # Copyright and license
