@@ -6,6 +6,7 @@ describe("NonRecursiveQuickSort", function () {
             var query = queryStrings[i].split("=");
             if (query[0] === "n") conf.n = parseInt(query[1]);
             if (query[0] === "randmax") conf.randMax = parseInt(query[1]);
+            if (query[0] === "verbose") conf.verbose = query[1];
         }
     }
     var ary = new Array(conf.n);
