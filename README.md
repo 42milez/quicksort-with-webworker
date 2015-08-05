@@ -4,6 +4,8 @@ There are the two parts in this project. One of them evaluates the performance o
 Another one evaluates only non-recursive quick sort performance.
 Some of the non-recursive quick sort benchmarking are evaluated with one or two worker threads.
 
+see also: [非再帰版クイックソートのパフォーマンス比較（Web Workers + Array Buffer）](http://akihiro-takase.tumblr.com/post/122149323831/%E9%9D%9E%E5%86%8D%E5%B8%B0%E7%89%88%E3%82%AF%E3%82%A4%E3%83%83%E3%82%AF%E3%82%BD%E3%83%BC%E3%83%88%E3%81%AE%E3%83%91%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%B3%E3%82%B9%E6%AF%94%E8%BC%83web-workers-array)
+
 # How to run the benchmark
 You can run some specs to open a SpecRunner.html in your browser.
 For example, if you run a multi-thread non-recursive quick sort spec, open a HTML file below:
